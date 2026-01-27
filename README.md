@@ -5,9 +5,9 @@ Simple library to write excel files.
 ## Examples
 
 ```python
-# models.py
 import xlsxwriter
 from simple_excel_writer import SimpleExcelFileCreator
+
 excel_header = ("Header 1", "Header 1")
 excel_data = [["row 1 1", "row 1 2"], ["row 2 1", "row 2 2"]]
 excel_sheetname: str = "Sheet 1"

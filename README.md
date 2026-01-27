@@ -39,7 +39,6 @@ excel_creator.get_excel_for_response()
 - pillow >=9.2
 - xlsxwriter >=1.3.6
 - pytz >=2020.1
-- environs >=9.3.1
 
 ## Installation
 ```pip install simple-excel-writer```

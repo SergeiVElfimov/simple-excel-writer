@@ -55,6 +55,10 @@ class XLSXCreator:
         self._format_header_table = format_header_table
         self._table_label_format = table_label_format
         self._time_zone = time_zone
+        self._format_cell_datetime = self.workbook.add_format(self._datetime_cell_format)
+        self._format_cell_date = self.workbook.add_format(self._date_cell_format)
+        self._format_cell_percent = self.workbook.add_format(self._percent_cell_format)
+        self._format_cell_border = self.workbook.add_format(self._format_border)
 
     @property
     def ws_last_row_num(self) -> int:
@@ -146,18 +150,6 @@ class XLSXCreator:
             )
         )
 
-    def _format_cell_datetime(self):
-        return self.workbook.add_format(self._datetime_cell_format)
-
-    def _format_cell_date(self):
-        return self.workbook.add_format(self._date_cell_format)
-
-    def _format_cell_percent(self):
-        return self.workbook.add_format(self._percent_cell_format)
-
-    def _format_cell_border(self):
-        return self.workbook.add_format(self._format_border)
-
     def write_row(self, row_num, row) -> None:
         """Write new row.
 
@@ -169,13 +161,13 @@ class XLSXCreator:
                 if str(elem.tzinfo) == "UTC":
                     elem = elem.astimezone(tz=self._time_zone)
                     elem = elem.replace(tzinfo=None)
-                self.worksheet.write_datetime(row_num, col_num, elem, cell_format=self._format_cell_datetime())
+                self.worksheet.write_datetime(row_num, col_num, elem, cell_format=self._format_cell_datetime)
             elif isinstance(elem, date):
-                self.worksheet.write_datetime(row_num, col_num, elem, cell_format=self._format_cell_date())
+                self.worksheet.write_datetime(row_num, col_num, elem, cell_format=self._format_cell_date)
             elif isinstance(elem, Decimal | int):
-                self.worksheet.write_number(row_num, col_num, elem, cell_format=self._format_cell_border())
+                self.worksheet.write_number(row_num, col_num, elem, cell_format=self._format_cell_border)
             elif isinstance(elem, str):
-                self.worksheet.write(row_num, col_num, elem, self._format_cell_border())
+                self.worksheet.write(row_num, col_num, elem, self._format_cell_border)
             elif isinstance(elem, Image.Image):
                 im_bytes = io.BytesIO()
                 elem.save(im_bytes, format="JPEG")
@@ -183,7 +175,7 @@ class XLSXCreator:
             else:
                 if elem is None:
                     elem = ""
-                self.worksheet.write(row_num, col_num, str(elem), self._format_cell_border())
+                self.worksheet.write(row_num, col_num, str(elem), self._format_cell_border)
 
     def make_excel(self, close_workbook: bool = True) -> None:
         """Create excel by blocks."""

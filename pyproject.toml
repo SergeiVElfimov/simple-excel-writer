@@ -16,7 +16,7 @@ ignore_missing_imports = true
 
 [tool.poetry]
 name = "simple-excel-writer"
-version = "0.0.1"
+version = "0.0.2"
 description = "Simple library to write excel files"
 authors = ["Sergey V. Elfimov <elfimovserg@gmail.com>"]
 packages = [{include = "simple_excel_writer"}]

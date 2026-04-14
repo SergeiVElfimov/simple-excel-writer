@@ -1,5 +1,10 @@
 # Simple Excel Writer
 
+[![build-status-image]][build-status]
+[![codeql-image]][codeql]
+[![pypi-version]][pypi]
+[![pypi-downloads]][pypi]
+
 Simple library to write excel files.
 
 ## Examples
@@ -42,3 +47,12 @@ excel_creator.get_excel_for_response()
 
 ## Installation
 ```pip install simple-excel-writer```
+
+
+[build-status-image]: https://github.com/SergeiVElfimov/simple-excel-writer/actions/workflows/python-package.yml/badge.svg
+[build-status]: https://github.com/SergeiVElfimov/simple-excel-writer/actions/workflows/python-package.yml
+[codeql-image]: https://github.com/SergeiVElfimov/simple-excel-writer/actions/workflows/codeql.yml/badge.svg
+[codeql]: https://github.com/SergeiVElfimov/simple-excel-writer/actions/workflows/codeql.yml
+[pypi-version]: https://img.shields.io/pypi/v/simple-excel-writer.svg
+[pypi-downloads]: https://img.shields.io/pypi/dm/simple-excel-writer?color=%232E73B2&logo=python&logoColor=%23F9D25F
+[pypi]: https://pypi.org/project/simple-excel-writer/

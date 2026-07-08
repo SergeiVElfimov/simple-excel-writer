@@ -40,7 +40,7 @@ excel_creator.get_excel_for_response()
 ```
 
 ## Required
-- python >=3.11, <4.0
+- python >=3.10, <4.0
 - pillow >=9.2
 - xlsxwriter >=1.3.6
 - pytz >=2020.1

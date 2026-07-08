@@ -16,7 +16,7 @@ ignore_missing_imports = true
 
 [tool.poetry]
 name = "simple-excel-writer"
-version = "0.0.2"
+version = "0.0.3"
 description = "Simple library to write excel files"
 authors = ["Sergey V. Elfimov <elfimovserg@gmail.com>"]
 packages = [{include = "simple_excel_writer"}]
@@ -29,6 +29,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -39,7 +40,7 @@ classifiers = [
 pillow = ">=9.2"
 xlsxwriter = ">=1.3.6"
 pytz = ">=2020.1"
-python = ">=3.11,<4.0"
+python = ">=3.10,<4.0"
 
 [tool.poetry.group.dev.dependencies]
 bandit = "^1.7.9"
